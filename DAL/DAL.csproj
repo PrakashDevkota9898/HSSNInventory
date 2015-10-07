@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82B0AB4F-9346-43FF-B74E-3B7840FB6BDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\HNSSApplication\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillOfMaterial.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillOfMaterialDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Dealer.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchOrder.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchOrderDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceDispatch.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceDispatchDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Flavour.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormModule.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodReceivedNote.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrnDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HSSN.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSSN.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HSSN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HSSN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HSSN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IssueMaterial.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IssueProductMaterialDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrderDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRNDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionMaterial.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionMaterialLedger.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductLedger.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductNormTemplate.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductNormTemplateDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStock.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseRequisitionNote.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SerialNumber.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubCategory.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubProduct.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfMeasurement.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfileDetail.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse.cs">
+      <DependentUpon>HSSN.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HSSN.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HSSN.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HSSN.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HSSN.edmx</DependentUpon>
+      <LastGenOutput>HSSN.Context.cs</LastGenOutput>
+    </None>
+    <None Include="HSSN.edmx.diagram">
+      <DependentUpon>HSSN.edmx</DependentUpon>
+    </None>
+    <None Include="HSSN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HSSN.edmx</DependentUpon>
+      <LastGenOutput>HSSN.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,139 @@
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.FrmLogin.resources
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.MdiMain.resources
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.Properties.Resources.resources
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.csproj.GenerateResource.Cache
+G:\project\HNSSApplication\bin\Debug\HNSSApplication.exe.config
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.csprojResolveAssemblyReference.cache
+G:\project\HNSSApplication\bin\Debug\HNSSApplication.exe
+G:\project\HNSSApplication\bin\Debug\HNSSApplication.pdb
+G:\project\HNSSApplication\bin\Debug\MODEL.dll
+G:\project\HNSSApplication\bin\Debug\SERVICE.dll
+G:\project\HNSSApplication\bin\Debug\DAL.dll
+G:\project\HNSSApplication\bin\Debug\EntityFramework.dll
+G:\project\HNSSApplication\bin\Debug\MODEL.pdb
+G:\project\HNSSApplication\bin\Debug\SERVICE.pdb
+G:\project\HNSSApplication\bin\Debug\DAL.pdb
+G:\project\HNSSApplication\bin\Debug\EntityFramework.xml
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.exe
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.pdb
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.FrmDispatchOrder.resources
+G:\project\HNSSApplication\obj\Debug\HNSSApplication.FrmPurchaseRequisitionNote.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\HNSSApplication.exe.config
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\HNSSApplication.exe
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\HNSSApplication.pdb
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\MODEL.dll
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\SERVICE.dll
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\DAL.dll
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\MODEL.pdb
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\SERVICE.pdb
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\DAL.pdb
+C:\Users\admin\Desktop\project\project\HNSSApplication\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmProduct.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmProductEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterialEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterial.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmDealerEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmDealer.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouseEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouse.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmUnitEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmUnit.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavourEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavour.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmBrand.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmBrandEntry.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmDispatchOrder.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmLogin.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.FrmPurchaseRequisitionNote.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.MdiMain.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.Properties.Resources.resources
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.exe
+C:\Users\admin\Desktop\project\project\HNSSApplication\obj\Debug\HNSSApplication.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.exe.config
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.exe
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.exe
+G:\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\MODEL.dll
+G:\HssnInventory\HNSSApplication\bin\Debug\SERVICE.dll
+G:\HssnInventory\HNSSApplication\bin\Debug\DAL.dll
+G:\HssnInventory\HNSSApplication\bin\Debug\EntityFramework.dll
+G:\HssnInventory\HNSSApplication\bin\Debug\MODEL.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\SERVICE.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\DAL.pdb
+G:\HssnInventory\HNSSApplication\bin\Debug\EntityFramework.xml
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.csprojResolveAssemblyReference.cache
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProduct.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterialEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterial.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDealerEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDealer.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouseEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouse.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmUnitEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmUnit.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavourEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavour.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmBrand.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmBrandEntry.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDispatchOrder.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmLogin.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmPurchaseRequisitionNote.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.MdiMain.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.Properties.Resources.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.csproj.GenerateResource.Cache
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmJobOrder.resources
+G:\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmReceivedGoodsNote.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.csprojResolveAssemblyReference.cache
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmBillOfMaterial.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmFinanceDispatchOrder.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmInvoice.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmIssueMaterial.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmJobOrder.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmJobOrderVerification.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmManagerVerification.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmOpeningStock.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmPRNVerification.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProduct.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterialEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmProductionMaterial.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDealerEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDealer.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmReceivedGoodsNote.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouseEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmWareHouse.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmUnitEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmUnit.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavourEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmFlavour.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmBrand.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmBrandEntry.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmDispatchOrder.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmLogin.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.FrmPurchaseRequisitionNote.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.MdiMain.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.Properties.Resources.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.Reports.RptDispatchOrderSummary.resources
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.csproj.GenerateResource.Cache
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\RdlCompile.cache
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\RdlCompile.compiled
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.exe.config
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.exe
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\HNSSApplication.pdb
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\MODEL.dll
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\SarropsUserManagement.exe
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\SERVICE.dll
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\DAL.dll
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\EntityFramework.dll
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\MODEL.pdb
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\SarropsUserManagement.pdb
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\SERVICE.pdb
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\DAL.pdb
+D:\My Working Folder\project\HssnInventory\HNSSApplication\bin\Debug\EntityFramework.xml
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.exe
+D:\My Working Folder\project\HssnInventory\HNSSApplication\obj\Debug\HNSSApplication.pdb

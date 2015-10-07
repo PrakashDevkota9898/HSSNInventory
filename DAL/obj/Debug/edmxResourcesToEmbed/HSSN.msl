@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HNSSInventoryModelStoreContainer" CdmEntityContainer="HSSNInventoryEntities">
+    <EntitySetMapping Name="BillOfMaterials">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.BillOfMaterial">
+        <MappingFragment StoreEntitySet="BillOfMaterial">
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+          <ScalarProperty Name="IsIssued" ColumnName="IsIssued" />
+          <ScalarProperty Name="CartoonQuantity" ColumnName="CartoonQuantity" />
+          <ScalarProperty Name="BatchQuantity" ColumnName="BatchQuantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="BillOfmaterialCode" ColumnName="BillOfmaterialCode" />
+          <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillOfMaterialDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.BillOfMaterialDetail">
+        <MappingFragment StoreEntitySet="BillOfMaterialDetail">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ManufacturedProductId" ColumnName="ManufacturedProductId" />
+          <ScalarProperty Name="UnitOfMeasurement" ColumnName="UnitOfMeasurement" />
+          <ScalarProperty Name="ProductMaterialId" ColumnName="ProductMaterialId" />
+          <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+          <ScalarProperty Name="BillOfMaterialDetailId" ColumnName="BillOfMaterialDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dealers">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Dealer">
+        <MappingFragment StoreEntitySet="Dealer">
+          <ScalarProperty Name="IsSupplier" ColumnName="IsSupplier" />
+          <ScalarProperty Name="DelearIncharge" ColumnName="DelearIncharge" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DispatchOrders">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.DispatchOrder">
+        <MappingFragment StoreEntitySet="DispatchOrder">
+          <ScalarProperty Name="DateOfApproved" ColumnName="DateOfApproved" />
+          <ScalarProperty Name="ReasonForNonApproval" ColumnName="ReasonForNonApproval" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="WhetherDoApproved" ColumnName="WhetherDoApproved" />
+          <ScalarProperty Name="CheckedBy" ColumnName="CheckedBy" />
+          <ScalarProperty Name="IsCheckedByManager" ColumnName="IsCheckedByManager" />
+          <ScalarProperty Name="OverDueAmount" ColumnName="OverDueAmount" />
+          <ScalarProperty Name="NetDueAmount" ColumnName="NetDueAmount" />
+          <ScalarProperty Name="BankGuaranteeAmount" ColumnName="BankGuaranteeAmount" />
+          <ScalarProperty Name="OrderRequestedBy" ColumnName="OrderRequestedBy" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="DispatchOrderDate" ColumnName="DispatchOrderDate" />
+          <ScalarProperty Name="DispatchOrderNumber" ColumnName="DispatchOrderNumber" />
+          <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DispatchOrderDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.DispatchOrderDetail">
+        <MappingFragment StoreEntitySet="DispatchOrderDetail">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+          <ScalarProperty Name="DispatchOrderDetailId" ColumnName="DispatchOrderDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceDispatches">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.FinanceDispatch">
+        <MappingFragment StoreEntitySet="FinanceDispatch">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedbY" ColumnName="ModifiedbY" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="FinanceDispatchId" ColumnName="FinanceDispatchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceDispatchDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.FinanceDispatchDetail">
+        <MappingFragment StoreEntitySet="FinanceDispatchDetail">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+          <ScalarProperty Name="ExcessShortageQuantity" ColumnName="ExcessShortageQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DispatchFromWareHouseId" ColumnName="DispatchFromWareHouseId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+          <ScalarProperty Name="FinanceDispatchId" ColumnName="FinanceDispatchId" />
+          <ScalarProperty Name="FinanceDispatchDetailId" ColumnName="FinanceDispatchDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flavours">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Flavour">
+        <MappingFragment StoreEntitySet="Flavour">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FlavourName" ColumnName="FlavourName" />
+          <ScalarProperty Name="FlavourId" ColumnName="FlavourId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormModules">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.FormModule">
+        <MappingFragment StoreEntitySet="FormModule">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+          <ScalarProperty Name="FormDisplayName" ColumnName="FormDisplayName" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodReceivedNotes">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.GoodReceivedNote">
+        <MappingFragment StoreEntitySet="GoodReceivedNote">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="GoodReceivedBy" ColumnName="GoodReceivedBy" />
+          <ScalarProperty Name="GoodReceivedDate" ColumnName="GoodReceivedDate" />
+          <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+          <ScalarProperty Name="GoodReceivedNoteId" ColumnName="GoodReceivedNoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrnDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.GrnDetail">
+        <MappingFragment StoreEntitySet="GrnDetail">
+          <ScalarProperty Name="ReceivedQuantity" ColumnName="ReceivedQuantity" />
+          <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+          <ScalarProperty Name="GoodReceivedNoteId" ColumnName="GoodReceivedNoteId" />
+          <ScalarProperty Name="GrnDetailId" ColumnName="GrnDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateOfEntry" ColumnName="DateOfEntry" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+          <ScalarProperty Name="VechileNumber" ColumnName="VechileNumber" />
+          <ScalarProperty Name="GateEntryDate" ColumnName="GateEntryDate" />
+          <ScalarProperty Name="GateEntryNo" ColumnName="GateEntryNo" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.InvoiceDetail">
+        <MappingFragment StoreEntitySet="InvoiceDetail">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="InvoiceDetailId" ColumnName="InvoiceDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueMaterials">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.IssueMaterial">
+        <MappingFragment StoreEntitySet="IssueMaterial">
+          <ScalarProperty Name="ReturnRemarks" ColumnName="ReturnRemarks" />
+          <ScalarProperty Name="IssueRemarks" ColumnName="IssueRemarks" />
+          <ScalarProperty Name="ReturnReceivedBy" ColumnName="ReturnReceivedBy" />
+          <ScalarProperty Name="IssueReceivedBy" ColumnName="IssueReceivedBy" />
+          <ScalarProperty Name="ReturnDatetimer" ColumnName="ReturnDatetimer" />
+          <ScalarProperty Name="ReturnBy" ColumnName="ReturnBy" />
+          <ScalarProperty Name="IssueDateTime" ColumnName="IssueDateTime" />
+          <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+          <ScalarProperty Name="Issuedby" ColumnName="Issuedby" />
+          <ScalarProperty Name="Issuedcode" ColumnName="Issuedcode" />
+          <ScalarProperty Name="IssueProductMaterilId" ColumnName="IssueProductMaterilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueProductMaterialDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.IssueProductMaterialDetail">
+        <MappingFragment StoreEntitySet="IssueProductMaterialDetail">
+          <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+          <ScalarProperty Name="IssuedQty" ColumnName="IssuedQty" />
+          <ScalarProperty Name="OrderedQty" ColumnName="OrderedQty" />
+          <ScalarProperty Name="ProductMaterialId" ColumnName="ProductMaterialId" />
+          <ScalarProperty Name="IssueProductMaterialId" ColumnName="IssueProductMaterialId" />
+          <ScalarProperty Name="IssueProductMaterialDetailId" ColumnName="IssueProductMaterialDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobOrders">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.JobOrder">
+        <MappingFragment StoreEntitySet="JobOrder">
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="JobOrderDate" ColumnName="JobOrderDate" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="JobOrderNumber" ColumnName="JobOrderNumber" />
+          <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobOrderDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.JobOrderDetail">
+        <MappingFragment StoreEntitySet="JobOrderDetail">
+          <ScalarProperty Name="PrnId" ColumnName="PrnId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+          <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+          <ScalarProperty Name="JobOrderDetailId" ColumnName="JobOrderDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisations">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Organisation">
+        <MappingFragment StoreEntitySet="Organisation">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNO" ColumnName="PhoneNO" />
+          <ScalarProperty Name="OrganisationName" ColumnName="OrganisationName" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRNDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.PRNDetail">
+        <MappingFragment StoreEntitySet="PRNDetail">
+          <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+          <ScalarProperty Name="PurchaseQuantity" ColumnName="PurchaseQuantity" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+          <ScalarProperty Name="PurchaseRequisitionNoteId" ColumnName="PurchaseRequisitionNoteId" />
+          <ScalarProperty Name="PRNDetailId" ColumnName="PRNDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExerciseDuty" ColumnName="ExerciseDuty" />
+          <ScalarProperty Name="IsVat" ColumnName="IsVat" />
+          <ScalarProperty Name="PerCartoonRate" ColumnName="PerCartoonRate" />
+          <ScalarProperty Name="PacketPerCartoon" ColumnName="PacketPerCartoon" />
+          <ScalarProperty Name="UnitOfMeasureId" ColumnName="UnitOfMeasureId" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="SKUCode" ColumnName="SKUCode" />
+          <ScalarProperty Name="FlavourId" ColumnName="FlavourId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductionMaterials">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductionMaterial">
+        <MappingFragment StoreEntitySet="ProductionMaterial">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+          <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductionMaterialLedgers">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductionMaterialLedger">
+        <MappingFragment StoreEntitySet="ProductionMaterialLedger">
+          <ScalarProperty Name="BalancedAmount" ColumnName="BalancedAmount" />
+          <ScalarProperty Name="DispatchAmout" ColumnName="DispatchAmout" />
+          <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+          <ScalarProperty Name="ProductionMaterialLedgerId" ColumnName="ProductionMaterialLedgerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductLedgers">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductLedger">
+        <MappingFragment StoreEntitySet="ProductLedger">
+          <ScalarProperty Name="BalancedAmount" ColumnName="BalancedAmount" />
+          <ScalarProperty Name="DispatchAmount" ColumnName="DispatchAmount" />
+          <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="ProductLedgerId" ColumnName="ProductLedgerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductNormTemplates">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductNormTemplate">
+        <MappingFragment StoreEntitySet="ProductNormTemplate">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="WasteQuantity" ColumnName="WasteQuantity" />
+          <ScalarProperty Name="OutputQuantity" ColumnName="OutputQuantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductNormTemplateId" ColumnName="ProductNormTemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductNormTemplateDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductNormTemplateDetail">
+        <MappingFragment StoreEntitySet="ProductNormTemplateDetail">
+          <ScalarProperty Name="CartoonQuantity" ColumnName="CartoonQuantity" />
+          <ScalarProperty Name="BatchQuantity" ColumnName="BatchQuantity" />
+          <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+          <ScalarProperty Name="SubProductId" ColumnName="SubProductId" />
+          <ScalarProperty Name="ProductNormTemplateId" ColumnName="ProductNormTemplateId" />
+          <ScalarProperty Name="ProductNormTemplateDetailId" ColumnName="ProductNormTemplateDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductStocks">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.ProductStock">
+        <MappingFragment StoreEntitySet="ProductStock">
+          <ScalarProperty Name="InOutMode" ColumnName="InOutMode" />
+          <ScalarProperty Name="CurrentStock" ColumnName="CurrentStock" />
+          <ScalarProperty Name="OpeningStock" ColumnName="OpeningStock" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+          <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductStockId" ColumnName="ProductStockId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseRequisitionNotes">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.PurchaseRequisitionNote">
+        <MappingFragment StoreEntitySet="PurchaseRequisitionNote">
+          <ScalarProperty Name="DateOfApproved" ColumnName="DateOfApproved" />
+          <ScalarProperty Name="ApproverId" ColumnName="ApproverId" />
+          <ScalarProperty Name="IsApprovedByGM" ColumnName="IsApprovedByGM" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="NepPRNDate" ColumnName="NepPRNDate" />
+          <ScalarProperty Name="EngPRNDate" ColumnName="EngPRNDate" />
+          <ScalarProperty Name="PrnNumber" ColumnName="PrnNumber" />
+          <ScalarProperty Name="PurchaseRequisitionNoteId" ColumnName="PurchaseRequisitionNoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SerialNumbers">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.SerialNumber">
+        <MappingFragment StoreEntitySet="SerialNumber">
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+          <ScalarProperty Name="CurrentNumber" ColumnName="CurrentNumber" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="IncrementUnit" ColumnName="IncrementUnit" />
+          <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.SubCategory">
+        <MappingFragment StoreEntitySet="SubCategory">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubProducts">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.SubProduct">
+        <MappingFragment StoreEntitySet="SubProduct">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="SubProductName" ColumnName="SubProductName" />
+          <ScalarProperty Name="SubProductId" ColumnName="SubProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitOfMeasurements">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.UnitOfMeasurement">
+        <MappingFragment StoreEntitySet="UnitOfMeasurement">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProfileDesc" ColumnName="ProfileDesc" />
+          <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfileDetails">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.UserProfileDetail">
+        <MappingFragment StoreEntitySet="UserProfileDetail">
+          <ScalarProperty Name="ViewStatus" ColumnName="ViewStatus" />
+          <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="EditStatus" ColumnName="EditStatus" />
+          <ScalarProperty Name="CreateStatus" ColumnName="CreateStatus" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ProfileDetailId" ColumnName="ProfileDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WareHouses">
+      <EntityTypeMapping TypeName="HNSSInventoryModel.WareHouse">
+        <MappingFragment StoreEntitySet="WareHouse">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WareHouseType" ColumnName="WareHouseType" />
+          <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+          <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

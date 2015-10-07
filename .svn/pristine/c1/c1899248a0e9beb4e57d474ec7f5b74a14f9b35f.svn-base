@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using MODEL;
+using SERVICE.IService;
+using SERVICE.Service;
+using Telerik.WinControls;
+
+namespace HNSSApplication
+{
+    public partial class FrmPurchaseRequisitionNote : Telerik.WinControls.UI.RadForm
+    {
+        private ICommonService _commonService;
+        private IProductService _productService;
+
+        public UserDetailModel UserDetailModel;
+        public string OpMode { get; set; }
+
+        public FrmPurchaseRequisitionNote()
+        {
+
+            InitializeComponent();
+            _commonService=new CommonService();
+            _productService = new ProductService();
+        }
+
+        public void UserAuthentication(int profileId, string menuName)
+        {
+            var Userdetail = _commonService.GetProfileInfo(UserDetailModel.ProfileId, UserDetailModel.MenuName);
+            //if (Userdetail.CreateStatus == false)
+            //{
+            //    btnNew.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnNew.Enabled = true;
+            //}
+            //if (Userdetail.EditStatus == false)
+            //{
+            //    btnEdit.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnEdit.Enabled = true;
+            //}
+            //if (Userdetail.DeleteStatus == false)
+            //{
+            //    btnDelete.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnDelete.Enabled = true;
+            //}
+        }
+
+        private void radGroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadProductionMaterialCombo()
+        {
+            var combodata = _productService.GetAllProduct();
+            cmbProduct.DataSource = combodata;
+            cmbProduct.ValueMember = "ProductId";
+            cmbProduct.DisplayMember = "ProductName";
+            _commonService.HideColumn(cmbProduct);
+            cmbProduct.Refresh();
+        }
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            OpMode = "New";
+            txtPrn.Text = _commonService.GetSerialNumberByVoucherType("PRN").ToString();
+        }
+
+        private void FrmPurchaseRequisitionNote_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    }
+}

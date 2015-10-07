@@ -1,0 +1,1571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HNSSInventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BillOfMaterial">
+          <Key>
+            <PropertyRef Name="BillOfMaterialId" />
+          </Key>
+          <Property Name="BillOfMaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillOfmaterialCode" Type="varchar" MaxLength="10" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="BatchQuantity" Type="int" />
+          <Property Name="CartoonQuantity" Type="int" />
+          <Property Name="IsIssued" Type="tinyint" />
+          <Property Name="PreparedDate" Type="date" />
+          <Property Name="PreparedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="BillOfMaterialDetail">
+          <Key>
+            <PropertyRef Name="BillOfMaterialDetailId" />
+          </Key>
+          <Property Name="BillOfMaterialDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillOfMaterialId" Type="int" Nullable="false" />
+          <Property Name="ProductMaterialId" Type="int" Nullable="false" />
+          <Property Name="UnitOfMeasurement" Type="int" Nullable="false" />
+          <Property Name="ManufacturedProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dealer">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Name="DealerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DealerAddress" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="nchar" MaxLength="10" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="DelearIncharge" Type="varchar" MaxLength="150" />
+          <Property Name="IsSupplier" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="DispatchOrder">
+          <Key>
+            <PropertyRef Name="DispatchOrderId" />
+          </Key>
+          <Property Name="DispatchOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchOrderNumber" Type="int" Nullable="false" />
+          <Property Name="DispatchOrderDate" Type="datetime" Nullable="false" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="OrderRequestedBy" Type="int" Nullable="false" />
+          <Property Name="BankGuaranteeAmount" Type="money" Nullable="false" />
+          <Property Name="NetDueAmount" Type="money" Nullable="false" />
+          <Property Name="OverDueAmount" Type="money" Nullable="false" />
+          <Property Name="IsCheckedByManager" Type="bit" />
+          <Property Name="CheckedBy" Type="int" />
+          <Property Name="WhetherDoApproved" Type="bit" />
+          <Property Name="ApprovedBy" Type="int" />
+          <Property Name="ReasonForNonApproval" Type="text" />
+          <Property Name="DateOfApproved" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DispatchOrderDetail">
+          <Key>
+            <PropertyRef Name="DispatchOrderDetailId" />
+          </Key>
+          <Property Name="DispatchOrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchOrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="UnitId" Type="int" Nullable="false" />
+          <Property Name="Rate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FinanceDispatch">
+          <Key>
+            <PropertyRef Name="FinanceDispatchId" />
+          </Key>
+          <Property Name="FinanceDispatchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="DispatchOrderId" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedbY" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FinanceDispatchDetail">
+          <Key>
+            <PropertyRef Name="FinanceDispatchDetailId" />
+          </Key>
+          <Property Name="FinanceDispatchDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FinanceDispatchId" Type="int" Nullable="false" />
+          <Property Name="DispatchOrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="DispatchFromWareHouseId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExcessShortageQuantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UnitOfMeasurementId" Type="int" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Flavour">
+          <Key>
+            <PropertyRef Name="FlavourId" />
+          </Key>
+          <Property Name="FlavourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FlavourName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormModule">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FormName" Type="varchar" MaxLength="100" />
+          <Property Name="FormDisplayName" Type="varchar" MaxLength="100" />
+          <Property Name="IsParent" Type="bit" />
+          <Property Name="OrderNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="GoodReceivedNote">
+          <Key>
+            <PropertyRef Name="GoodReceivedNoteId" />
+          </Key>
+          <Property Name="GoodReceivedNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobOrderId" Type="int" Nullable="false" />
+          <Property Name="GoodReceivedDate" Type="date" Nullable="false" />
+          <Property Name="GoodReceivedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="GrnDetail">
+          <Key>
+            <PropertyRef Name="GrnDetailId" />
+          </Key>
+          <Property Name="GrnDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GoodReceivedNoteId" Type="int" Nullable="false" />
+          <Property Name="ProductionMaterialId" Type="int" Nullable="false" />
+          <Property Name="OrderQuantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReceivedQuantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="int" Nullable="false" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+          <Property Name="GateEntryNo" Type="int" Nullable="false" />
+          <Property Name="GateEntryDate" Type="date" />
+          <Property Name="VechileNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DistributorId" Type="int" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfEntry" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="InvoiceDetail">
+          <Key>
+            <PropertyRef Name="InvoiceDetailId" />
+          </Key>
+          <Property Name="InvoiceDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="IssueMaterial">
+          <Key>
+            <PropertyRef Name="IssueProductMaterilId" />
+          </Key>
+          <Property Name="IssueProductMaterilId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Issuedcode" Type="int" />
+          <Property Name="Issuedby" Type="int" />
+          <Property Name="BillOfMaterialId" Type="int" />
+          <Property Name="IssueDateTime" Type="datetime" />
+          <Property Name="ReturnBy" Type="int" />
+          <Property Name="ReturnDatetimer" Type="datetime" />
+          <Property Name="IssueReceivedBy" Type="int" />
+          <Property Name="ReturnReceivedBy" Type="int" />
+          <Property Name="IssueRemarks" Type="varchar" MaxLength="50" />
+          <Property Name="ReturnRemarks" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IssueProductMaterialDetail">
+          <Key>
+            <PropertyRef Name="IssueProductMaterialDetailId" />
+          </Key>
+          <Property Name="IssueProductMaterialDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IssueProductMaterialId" Type="int" />
+          <Property Name="ProductMaterialId" Type="int" />
+          <Property Name="OrderedQty" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="IssuedQty" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ReturnQty" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="JobOrder">
+          <Key>
+            <PropertyRef Name="JobOrderId" />
+          </Key>
+          <Property Name="JobOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobOrderNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="JobOrderDate" Type="date" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PreparedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="int" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="ApprovedBy" Type="int" />
+          <Property Name="ApprovedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="JobOrderDetail">
+          <Key>
+            <PropertyRef Name="JobOrderDetailId" />
+          </Key>
+          <Property Name="JobOrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobOrderId" Type="int" />
+          <Property Name="ProductionMaterialId" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PrnId" Type="int" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="OrganisationId" />
+          </Key>
+          <Property Name="OrganisationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganisationName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRNDetail">
+          <Key>
+            <PropertyRef Name="PRNDetailId" />
+          </Key>
+          <Property Name="PRNDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchaseRequisitionNoteId" Type="int" Nullable="false" />
+          <Property Name="ProductionMaterialId" Type="int" Nullable="false" />
+          <Property Name="PurchaseQuantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitOfMeasurementId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="ProductName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FlavourId" Type="int" />
+          <Property Name="SKUCode" Type="varchar" MaxLength="150" />
+          <Property Name="weight" Type="float" Nullable="false" />
+          <Property Name="UnitOfMeasureId" Type="int" Nullable="false" />
+          <Property Name="PacketPerCartoon" Type="int" Nullable="false" />
+          <Property Name="PerCartoonRate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsVat" Type="tinyint" Nullable="false" />
+          <Property Name="ExerciseDuty" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="ProductionMaterial">
+          <Key>
+            <PropertyRef Name="ProductionMaterialId" />
+          </Key>
+          <Property Name="ProductionMaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="UnitOfMeasurementId" Type="int" Nullable="false" />
+          <Property Name="MaterialType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ProductionMaterialLedger">
+          <Key>
+            <PropertyRef Name="ProductionMaterialLedgerId" />
+          </Key>
+          <Property Name="ProductionMaterialLedgerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductionMaterialId" Type="int" Nullable="false" />
+          <Property Name="WarehouseId" Type="int" Nullable="false" />
+          <Property Name="ActionType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReceivedAmount" Type="float" Nullable="false" />
+          <Property Name="DispatchAmout" Type="float" Nullable="false" />
+          <Property Name="BalancedAmount" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductLedger">
+          <Key>
+            <PropertyRef Name="ProductLedgerId" />
+          </Key>
+          <Property Name="ProductLedgerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="WarehouseId" Type="int" Nullable="false" />
+          <Property Name="ActionType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReceivedAmount" Type="float" Nullable="false" />
+          <Property Name="DispatchAmount" Type="float" Nullable="false" />
+          <Property Name="BalancedAmount" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductNormTemplate">
+          <Key>
+            <PropertyRef Name="ProductNormTemplateId" />
+          </Key>
+          <Property Name="ProductNormTemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="OutputQuantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WasteQuantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PreparedBy" Type="int" Nullable="false" />
+          <Property Name="PreparedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="ProductNormTemplateDetail">
+          <Key>
+            <PropertyRef Name="ProductNormTemplateDetailId" />
+          </Key>
+          <Property Name="ProductNormTemplateDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductNormTemplateId" Type="int" Nullable="false" />
+          <Property Name="SubProductId" Type="int" />
+          <Property Name="ProductionMaterialId" Type="int" Nullable="false" />
+          <Property Name="BatchQuantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CartoonQuantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductStock">
+          <Key>
+            <PropertyRef Name="ProductStockId" />
+          </Key>
+          <Property Name="ProductStockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="WareHouseId" Type="int" Nullable="false" />
+          <Property Name="OrganisationId" Type="int" Nullable="false" />
+          <Property Name="OpeningStock" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CurrentStock" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="InOutMode" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PurchaseRequisitionNote">
+          <Key>
+            <PropertyRef Name="PurchaseRequisitionNoteId" />
+          </Key>
+          <Property Name="PurchaseRequisitionNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrnNumber" Type="int" Nullable="false" />
+          <Property Name="EngPRNDate" Type="date" Nullable="false" />
+          <Property Name="NepPRNDate" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="Reason" Type="text" />
+          <Property Name="IsApprovedByGM" Type="tinyint" />
+          <Property Name="ApproverId" Type="int" />
+          <Property Name="DateOfApproved" Type="date" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegionName" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="SequenceId" />
+          </Key>
+          <Property Name="SequenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IncrementUnit" Type="int" />
+          <Property Name="Start" Type="int" />
+          <Property Name="CurrentNumber" Type="int" />
+          <Property Name="OrganisationId" Type="int" />
+          <Property Name="VoucherType" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubCategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubProduct">
+          <Key>
+            <PropertyRef Name="SubProductId" />
+          </Key>
+          <Property Name="SubProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubProductName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UnitOfMeasurement">
+          <Key>
+            <PropertyRef Name="UnitOfMeasurementId" />
+          </Key>
+          <Property Name="UnitOfMeasurementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserDetailId" />
+          </Key>
+          <Property Name="UserDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplayName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrganisationId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ProfileId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfileName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProfileDesc" Type="varchar" MaxLength="1000" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="OrganisationId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserProfileDetail">
+          <Key>
+            <PropertyRef Name="ProfileDetailId" />
+          </Key>
+          <Property Name="ProfileDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfileId" Type="int" Nullable="false" />
+          <Property Name="ModuleId" Type="int" Nullable="false" />
+          <Property Name="CreateStatus" Type="bit" />
+          <Property Name="EditStatus" Type="bit" />
+          <Property Name="DeleteStatus" Type="bit" />
+          <Property Name="PrintStatus" Type="bit" />
+          <Property Name="ViewStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="WareHouse">
+          <Key>
+            <PropertyRef Name="WareHouseId" />
+          </Key>
+          <Property Name="WareHouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WareHouseName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="WareHouseType" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ProductNormTemplateDetail_ProductionMaterial">
+          <End Role="ProductionMaterial" Type="Self.ProductionMaterial" Multiplicity="1" />
+          <End Role="ProductNormTemplateDetail" Type="Self.ProductNormTemplateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductionMaterial">
+              <PropertyRef Name="ProductionMaterialId" />
+            </Principal>
+            <Dependent Role="ProductNormTemplateDetail">
+              <PropertyRef Name="ProductionMaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductNormTemplateDetail_ProductNormTemplate">
+          <End Role="ProductNormTemplate" Type="Self.ProductNormTemplate" Multiplicity="1" />
+          <End Role="ProductNormTemplateDetail" Type="Self.ProductNormTemplateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductNormTemplate">
+              <PropertyRef Name="ProductNormTemplateId" />
+            </Principal>
+            <Dependent Role="ProductNormTemplateDetail">
+              <PropertyRef Name="ProductNormTemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HNSSInventoryModelStoreContainer">
+          <EntitySet Name="BillOfMaterial" EntityType="Self.BillOfMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillOfMaterialDetail" EntityType="Self.BillOfMaterialDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dealer" EntityType="Self.Dealer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchOrder" EntityType="Self.DispatchOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchOrderDetail" EntityType="Self.DispatchOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinanceDispatch" EntityType="Self.FinanceDispatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinanceDispatchDetail" EntityType="Self.FinanceDispatchDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Flavour" EntityType="Self.Flavour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormModule" EntityType="Self.FormModule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoodReceivedNote" EntityType="Self.GoodReceivedNote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrnDetail" EntityType="Self.GrnDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IssueMaterial" EntityType="Self.IssueMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IssueProductMaterialDetail" EntityType="Self.IssueProductMaterialDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobOrder" EntityType="Self.JobOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobOrderDetail" EntityType="Self.JobOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organisation" EntityType="Self.Organisation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRNDetail" EntityType="Self.PRNDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductionMaterial" EntityType="Self.ProductionMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductionMaterialLedger" EntityType="Self.ProductionMaterialLedger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductLedger" EntityType="Self.ProductLedger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductNormTemplate" EntityType="Self.ProductNormTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductNormTemplateDetail" EntityType="Self.ProductNormTemplateDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStock" EntityType="Self.ProductStock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseRequisitionNote" EntityType="Self.PurchaseRequisitionNote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SerialNumber" EntityType="Self.SerialNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubProduct" EntityType="Self.SubProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UnitOfMeasurement" EntityType="Self.UnitOfMeasurement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfileDetail" EntityType="Self.UserProfileDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WareHouse" EntityType="Self.WareHouse" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProductNormTemplateDetail_ProductionMaterial" Association="Self.FK_ProductNormTemplateDetail_ProductionMaterial">
+            <End Role="ProductionMaterial" EntitySet="ProductionMaterial" />
+            <End Role="ProductNormTemplateDetail" EntitySet="ProductNormTemplateDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductNormTemplateDetail_ProductNormTemplate" Association="Self.FK_ProductNormTemplateDetail_ProductNormTemplate">
+            <End Role="ProductNormTemplate" EntitySet="ProductNormTemplate" />
+            <End Role="ProductNormTemplateDetail" EntitySet="ProductNormTemplateDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HNSSInventoryModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HSSNInventoryEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BillOfMaterials" EntityType="HNSSInventoryModel.BillOfMaterial" />
+          <EntitySet Name="BillOfMaterialDetails" EntityType="HNSSInventoryModel.BillOfMaterialDetail" />
+          <EntitySet Name="Brands" EntityType="HNSSInventoryModel.Brand" />
+          <EntitySet Name="Dealers" EntityType="HNSSInventoryModel.Dealer" />
+          <EntitySet Name="DispatchOrders" EntityType="HNSSInventoryModel.DispatchOrder" />
+          <EntitySet Name="DispatchOrderDetails" EntityType="HNSSInventoryModel.DispatchOrderDetail" />
+          <EntitySet Name="FinanceDispatches" EntityType="HNSSInventoryModel.FinanceDispatch" />
+          <EntitySet Name="FinanceDispatchDetails" EntityType="HNSSInventoryModel.FinanceDispatchDetail" />
+          <EntitySet Name="Flavours" EntityType="HNSSInventoryModel.Flavour" />
+          <EntitySet Name="FormModules" EntityType="HNSSInventoryModel.FormModule" />
+          <EntitySet Name="GoodReceivedNotes" EntityType="HNSSInventoryModel.GoodReceivedNote" />
+          <EntitySet Name="GrnDetails" EntityType="HNSSInventoryModel.GrnDetail" />
+          <EntitySet Name="Invoices" EntityType="HNSSInventoryModel.Invoice" />
+          <EntitySet Name="InvoiceDetails" EntityType="HNSSInventoryModel.InvoiceDetail" />
+          <EntitySet Name="IssueMaterials" EntityType="HNSSInventoryModel.IssueMaterial" />
+          <EntitySet Name="IssueProductMaterialDetails" EntityType="HNSSInventoryModel.IssueProductMaterialDetail" />
+          <EntitySet Name="JobOrders" EntityType="HNSSInventoryModel.JobOrder" />
+          <EntitySet Name="JobOrderDetails" EntityType="HNSSInventoryModel.JobOrderDetail" />
+          <EntitySet Name="Organisations" EntityType="HNSSInventoryModel.Organisation" />
+          <EntitySet Name="PRNDetails" EntityType="HNSSInventoryModel.PRNDetail" />
+          <EntitySet Name="Products" EntityType="HNSSInventoryModel.Product" />
+          <EntitySet Name="ProductionMaterials" EntityType="HNSSInventoryModel.ProductionMaterial" />
+          <EntitySet Name="ProductionMaterialLedgers" EntityType="HNSSInventoryModel.ProductionMaterialLedger" />
+          <EntitySet Name="ProductLedgers" EntityType="HNSSInventoryModel.ProductLedger" />
+          <EntitySet Name="ProductNormTemplates" EntityType="HNSSInventoryModel.ProductNormTemplate" />
+          <EntitySet Name="ProductNormTemplateDetails" EntityType="HNSSInventoryModel.ProductNormTemplateDetail" />
+          <EntitySet Name="ProductStocks" EntityType="HNSSInventoryModel.ProductStock" />
+          <EntitySet Name="PurchaseRequisitionNotes" EntityType="HNSSInventoryModel.PurchaseRequisitionNote" />
+          <EntitySet Name="Regions" EntityType="HNSSInventoryModel.Region" />
+          <EntitySet Name="SerialNumbers" EntityType="HNSSInventoryModel.SerialNumber" />
+          <EntitySet Name="SubCategories" EntityType="HNSSInventoryModel.SubCategory" />
+          <EntitySet Name="SubProducts" EntityType="HNSSInventoryModel.SubProduct" />
+          <EntitySet Name="UnitOfMeasurements" EntityType="HNSSInventoryModel.UnitOfMeasurement" />
+          <EntitySet Name="UserDetails" EntityType="HNSSInventoryModel.UserDetail" />
+          <EntitySet Name="UserProfiles" EntityType="HNSSInventoryModel.UserProfile" />
+          <EntitySet Name="UserProfileDetails" EntityType="HNSSInventoryModel.UserProfileDetail" />
+          <EntitySet Name="WareHouses" EntityType="HNSSInventoryModel.WareHouse" />
+          <AssociationSet Name="FK_ProductNormTemplateDetail_ProductionMaterial" Association="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductionMaterial">
+            <End Role="ProductionMaterial" EntitySet="ProductionMaterials" />
+            <End Role="ProductNormTemplateDetail" EntitySet="ProductNormTemplateDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductNormTemplateDetail_ProductNormTemplate" Association="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductNormTemplate">
+            <End Role="ProductNormTemplate" EntitySet="ProductNormTemplates" />
+            <End Role="ProductNormTemplateDetail" EntitySet="ProductNormTemplateDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BillOfMaterial">
+          <Key>
+            <PropertyRef Name="BillOfMaterialId" />
+          </Key>
+          <Property Name="BillOfMaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillOfmaterialCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="BatchQuantity" Type="Int32" />
+          <Property Name="CartoonQuantity" Type="Int32" />
+          <Property Name="IsIssued" Type="Byte" />
+          <Property Name="PreparedDate" Type="DateTime" Precision="0" />
+          <Property Name="PreparedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BillOfMaterialDetail">
+          <Key>
+            <PropertyRef Name="BillOfMaterialDetailId" />
+          </Key>
+          <Property Name="BillOfMaterialDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillOfMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="ProductMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="UnitOfMeasurement" Type="Int32" Nullable="false" />
+          <Property Name="ManufacturedProductId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Dealer">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Name="DealerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DealerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="DelearIncharge" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsSupplier" Type="Byte" />
+        </EntityType>
+        <EntityType Name="DispatchOrder">
+          <Key>
+            <PropertyRef Name="DispatchOrderId" />
+          </Key>
+          <Property Name="DispatchOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchOrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="DispatchOrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DealerId" Type="Int32" Nullable="false" />
+          <Property Name="OrderRequestedBy" Type="Int32" Nullable="false" />
+          <Property Name="BankGuaranteeAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NetDueAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="OverDueAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="IsCheckedByManager" Type="Boolean" />
+          <Property Name="CheckedBy" Type="Int32" />
+          <Property Name="WhetherDoApproved" Type="Boolean" />
+          <Property Name="ApprovedBy" Type="Int32" />
+          <Property Name="ReasonForNonApproval" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfApproved" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DispatchOrderDetail">
+          <Key>
+            <PropertyRef Name="DispatchOrderDetailId" />
+          </Key>
+          <Property Name="DispatchOrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchOrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitId" Type="Int32" Nullable="false" />
+          <Property Name="Rate" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FinanceDispatch">
+          <Key>
+            <PropertyRef Name="FinanceDispatchId" />
+          </Key>
+          <Property Name="FinanceDispatchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="DispatchOrderId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedbY" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FinanceDispatchDetail">
+          <Key>
+            <PropertyRef Name="FinanceDispatchDetailId" />
+          </Key>
+          <Property Name="FinanceDispatchDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FinanceDispatchId" Type="Int32" Nullable="false" />
+          <Property Name="DispatchOrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="DispatchFromWareHouseId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ExcessShortageQuantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UnitOfMeasurementId" Type="Int32" />
+          <Property Name="Rate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Flavour">
+          <Key>
+            <PropertyRef Name="FlavourId" />
+          </Key>
+          <Property Name="FlavourId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlavourName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FormModule">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FormName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FormDisplayName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsParent" Type="Boolean" />
+          <Property Name="OrderNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GoodReceivedNote">
+          <Key>
+            <PropertyRef Name="GoodReceivedNoteId" />
+          </Key>
+          <Property Name="GoodReceivedNoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobOrderId" Type="Int32" Nullable="false" />
+          <Property Name="GoodReceivedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GoodReceivedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="GrnDetail">
+          <Key>
+            <PropertyRef Name="GrnDetailId" />
+          </Key>
+          <Property Name="GrnDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GoodReceivedNoteId" Type="Int32" Nullable="false" />
+          <Property Name="ProductionMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="OrderQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ReceivedQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNumber" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GateEntryNo" Type="Int32" Nullable="false" />
+          <Property Name="GateEntryDate" Type="DateTime" Precision="0" />
+          <Property Name="VechileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistributorId" Type="Int32" Nullable="false" />
+          <Property Name="Remarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfEntry" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="InvoiceDetail">
+          <Key>
+            <PropertyRef Name="InvoiceDetailId" />
+          </Key>
+          <Property Name="InvoiceDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="IssueMaterial">
+          <Key>
+            <PropertyRef Name="IssueProductMaterilId" />
+          </Key>
+          <Property Name="IssueProductMaterilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Issuedcode" Type="Int32" />
+          <Property Name="Issuedby" Type="Int32" />
+          <Property Name="BillOfMaterialId" Type="Int32" />
+          <Property Name="IssueDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ReturnBy" Type="Int32" />
+          <Property Name="ReturnDatetimer" Type="DateTime" Precision="3" />
+          <Property Name="IssueReceivedBy" Type="Int32" />
+          <Property Name="ReturnReceivedBy" Type="Int32" />
+          <Property Name="IssueRemarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReturnRemarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IssueProductMaterialDetail">
+          <Key>
+            <PropertyRef Name="IssueProductMaterialDetailId" />
+          </Key>
+          <Property Name="IssueProductMaterialDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IssueProductMaterialId" Type="Int32" />
+          <Property Name="ProductMaterialId" Type="Int32" />
+          <Property Name="OrderedQty" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="IssuedQty" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ReturnQty" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="JobOrder">
+          <Key>
+            <PropertyRef Name="JobOrderId" />
+          </Key>
+          <Property Name="JobOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobOrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="Int32" Nullable="false" />
+          <Property Name="JobOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PreparedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="Int32" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="ApprovedBy" Type="Int32" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="JobOrderDetail">
+          <Key>
+            <PropertyRef Name="JobOrderDetailId" />
+          </Key>
+          <Property Name="JobOrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobOrderId" Type="Int32" />
+          <Property Name="ProductionMaterialId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PrnId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="OrganisationId" />
+          </Key>
+          <Property Name="OrganisationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganisationName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRNDetail">
+          <Key>
+            <PropertyRef Name="PRNDetailId" />
+          </Key>
+          <Property Name="PRNDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseRequisitionNoteId" Type="Int32" Nullable="false" />
+          <Property Name="ProductionMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UnitOfMeasurementId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FlavourId" Type="Int32" />
+          <Property Name="SKUCode" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="weight" Type="Double" Nullable="false" />
+          <Property Name="UnitOfMeasureId" Type="Int32" Nullable="false" />
+          <Property Name="PacketPerCartoon" Type="Int32" Nullable="false" />
+          <Property Name="PerCartoonRate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IsVat" Type="Byte" Nullable="false" />
+          <Property Name="ExerciseDuty" Type="Byte" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="ProductionMaterial">
+          <Key>
+            <PropertyRef Name="ProductionMaterialId" />
+          </Key>
+          <Property Name="ProductionMaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UnitOfMeasurementId" Type="Int32" Nullable="false" />
+          <Property Name="MaterialType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductNormTemplateDetails" Relationship="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductionMaterial" FromRole="ProductionMaterial" ToRole="ProductNormTemplateDetail" />
+        </EntityType>
+        <EntityType Name="ProductionMaterialLedger">
+          <Key>
+            <PropertyRef Name="ProductionMaterialLedgerId" />
+          </Key>
+          <Property Name="ProductionMaterialLedgerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductionMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="WarehouseId" Type="Int32" Nullable="false" />
+          <Property Name="ActionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceivedAmount" Type="Double" Nullable="false" />
+          <Property Name="DispatchAmout" Type="Double" Nullable="false" />
+          <Property Name="BalancedAmount" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductLedger">
+          <Key>
+            <PropertyRef Name="ProductLedgerId" />
+          </Key>
+          <Property Name="ProductLedgerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNumber" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="WarehouseId" Type="Int32" Nullable="false" />
+          <Property Name="ActionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceivedAmount" Type="Double" Nullable="false" />
+          <Property Name="DispatchAmount" Type="Double" Nullable="false" />
+          <Property Name="BalancedAmount" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductNormTemplate">
+          <Key>
+            <PropertyRef Name="ProductNormTemplateId" />
+          </Key>
+          <Property Name="ProductNormTemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="OutputQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WasteQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PreparedBy" Type="Int32" Nullable="false" />
+          <Property Name="PreparedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ProductNormTemplateDetails" Relationship="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductNormTemplate" FromRole="ProductNormTemplate" ToRole="ProductNormTemplateDetail" />
+        </EntityType>
+        <EntityType Name="ProductNormTemplateDetail">
+          <Key>
+            <PropertyRef Name="ProductNormTemplateDetailId" />
+          </Key>
+          <Property Name="ProductNormTemplateDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductNormTemplateId" Type="Int32" Nullable="false" />
+          <Property Name="SubProductId" Type="Int32" />
+          <Property Name="ProductionMaterialId" Type="Int32" Nullable="false" />
+          <Property Name="BatchQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="CartoonQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <NavigationProperty Name="ProductionMaterial" Relationship="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductionMaterial" FromRole="ProductNormTemplateDetail" ToRole="ProductionMaterial" />
+          <NavigationProperty Name="ProductNormTemplate" Relationship="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductNormTemplate" FromRole="ProductNormTemplateDetail" ToRole="ProductNormTemplate" />
+        </EntityType>
+        <EntityType Name="ProductStock">
+          <Key>
+            <PropertyRef Name="ProductStockId" />
+          </Key>
+          <Property Name="ProductStockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="WareHouseId" Type="Int32" Nullable="false" />
+          <Property Name="OrganisationId" Type="Int32" Nullable="false" />
+          <Property Name="OpeningStock" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CurrentStock" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="InOutMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PurchaseRequisitionNote">
+          <Key>
+            <PropertyRef Name="PurchaseRequisitionNoteId" />
+          </Key>
+          <Property Name="PurchaseRequisitionNoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrnNumber" Type="Int32" Nullable="false" />
+          <Property Name="EngPRNDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NepPRNDate" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsApprovedByGM" Type="Byte" />
+          <Property Name="ApproverId" Type="Int32" />
+          <Property Name="DateOfApproved" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="SequenceId" />
+          </Key>
+          <Property Name="SequenceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IncrementUnit" Type="Int32" />
+          <Property Name="Start" Type="Int32" />
+          <Property Name="CurrentNumber" Type="Int32" />
+          <Property Name="OrganisationId" Type="Int32" />
+          <Property Name="VoucherType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubCategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SubProduct">
+          <Key>
+            <PropertyRef Name="SubProductId" />
+          </Key>
+          <Property Name="SubProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UnitOfMeasurement">
+          <Key>
+            <PropertyRef Name="UnitOfMeasurementId" />
+          </Key>
+          <Property Name="UnitOfMeasurementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserDetailId" />
+          </Key>
+          <Property Name="UserDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrganisationId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ProfileId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="OrganisationId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserProfileDetail">
+          <Key>
+            <PropertyRef Name="ProfileDetailId" />
+          </Key>
+          <Property Name="ProfileDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileId" Type="Int32" Nullable="false" />
+          <Property Name="ModuleId" Type="Int32" Nullable="false" />
+          <Property Name="CreateStatus" Type="Boolean" />
+          <Property Name="EditStatus" Type="Boolean" />
+          <Property Name="DeleteStatus" Type="Boolean" />
+          <Property Name="PrintStatus" Type="Boolean" />
+          <Property Name="ViewStatus" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="WareHouse">
+          <Key>
+            <PropertyRef Name="WareHouseId" />
+          </Key>
+          <Property Name="WareHouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WareHouseName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="WareHouseType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_ProductNormTemplateDetail_ProductionMaterial">
+          <End Type="HNSSInventoryModel.ProductionMaterial" Role="ProductionMaterial" Multiplicity="1" />
+          <End Type="HNSSInventoryModel.ProductNormTemplateDetail" Role="ProductNormTemplateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductionMaterial">
+              <PropertyRef Name="ProductionMaterialId" />
+            </Principal>
+            <Dependent Role="ProductNormTemplateDetail">
+              <PropertyRef Name="ProductionMaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductNormTemplateDetail_ProductNormTemplate">
+          <End Type="HNSSInventoryModel.ProductNormTemplate" Role="ProductNormTemplate" Multiplicity="1" />
+          <End Type="HNSSInventoryModel.ProductNormTemplateDetail" Role="ProductNormTemplateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductNormTemplate">
+              <PropertyRef Name="ProductNormTemplateId" />
+            </Principal>
+            <Dependent Role="ProductNormTemplateDetail">
+              <PropertyRef Name="ProductNormTemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HNSSInventoryModelStoreContainer" CdmEntityContainer="HSSNInventoryEntities">
+          <EntitySetMapping Name="BillOfMaterials">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.BillOfMaterial">
+              <MappingFragment StoreEntitySet="BillOfMaterial">
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="IsIssued" ColumnName="IsIssued" />
+                <ScalarProperty Name="CartoonQuantity" ColumnName="CartoonQuantity" />
+                <ScalarProperty Name="BatchQuantity" ColumnName="BatchQuantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="BillOfmaterialCode" ColumnName="BillOfmaterialCode" />
+                <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillOfMaterialDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.BillOfMaterialDetail">
+              <MappingFragment StoreEntitySet="BillOfMaterialDetail">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ManufacturedProductId" ColumnName="ManufacturedProductId" />
+                <ScalarProperty Name="UnitOfMeasurement" ColumnName="UnitOfMeasurement" />
+                <ScalarProperty Name="ProductMaterialId" ColumnName="ProductMaterialId" />
+                <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+                <ScalarProperty Name="BillOfMaterialDetailId" ColumnName="BillOfMaterialDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dealers">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Dealer">
+              <MappingFragment StoreEntitySet="Dealer">
+                <ScalarProperty Name="IsSupplier" ColumnName="IsSupplier" />
+                <ScalarProperty Name="DelearIncharge" ColumnName="DelearIncharge" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispatchOrders">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.DispatchOrder">
+              <MappingFragment StoreEntitySet="DispatchOrder">
+                <ScalarProperty Name="DateOfApproved" ColumnName="DateOfApproved" />
+                <ScalarProperty Name="ReasonForNonApproval" ColumnName="ReasonForNonApproval" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="WhetherDoApproved" ColumnName="WhetherDoApproved" />
+                <ScalarProperty Name="CheckedBy" ColumnName="CheckedBy" />
+                <ScalarProperty Name="IsCheckedByManager" ColumnName="IsCheckedByManager" />
+                <ScalarProperty Name="OverDueAmount" ColumnName="OverDueAmount" />
+                <ScalarProperty Name="NetDueAmount" ColumnName="NetDueAmount" />
+                <ScalarProperty Name="BankGuaranteeAmount" ColumnName="BankGuaranteeAmount" />
+                <ScalarProperty Name="OrderRequestedBy" ColumnName="OrderRequestedBy" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="DispatchOrderDate" ColumnName="DispatchOrderDate" />
+                <ScalarProperty Name="DispatchOrderNumber" ColumnName="DispatchOrderNumber" />
+                <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispatchOrderDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.DispatchOrderDetail">
+              <MappingFragment StoreEntitySet="DispatchOrderDetail">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+                <ScalarProperty Name="DispatchOrderDetailId" ColumnName="DispatchOrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceDispatches">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.FinanceDispatch">
+              <MappingFragment StoreEntitySet="FinanceDispatch">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedbY" ColumnName="ModifiedbY" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="FinanceDispatchId" ColumnName="FinanceDispatchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceDispatchDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.FinanceDispatchDetail">
+              <MappingFragment StoreEntitySet="FinanceDispatchDetail">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+                <ScalarProperty Name="ExcessShortageQuantity" ColumnName="ExcessShortageQuantity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DispatchFromWareHouseId" ColumnName="DispatchFromWareHouseId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="DispatchOrderId" ColumnName="DispatchOrderId" />
+                <ScalarProperty Name="FinanceDispatchId" ColumnName="FinanceDispatchId" />
+                <ScalarProperty Name="FinanceDispatchDetailId" ColumnName="FinanceDispatchDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Flavours">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Flavour">
+              <MappingFragment StoreEntitySet="Flavour">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FlavourName" ColumnName="FlavourName" />
+                <ScalarProperty Name="FlavourId" ColumnName="FlavourId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormModules">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.FormModule">
+              <MappingFragment StoreEntitySet="FormModule">
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+                <ScalarProperty Name="FormDisplayName" ColumnName="FormDisplayName" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoodReceivedNotes">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.GoodReceivedNote">
+              <MappingFragment StoreEntitySet="GoodReceivedNote">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="GoodReceivedBy" ColumnName="GoodReceivedBy" />
+                <ScalarProperty Name="GoodReceivedDate" ColumnName="GoodReceivedDate" />
+                <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+                <ScalarProperty Name="GoodReceivedNoteId" ColumnName="GoodReceivedNoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrnDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.GrnDetail">
+              <MappingFragment StoreEntitySet="GrnDetail">
+                <ScalarProperty Name="ReceivedQuantity" ColumnName="ReceivedQuantity" />
+                <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+                <ScalarProperty Name="GoodReceivedNoteId" ColumnName="GoodReceivedNoteId" />
+                <ScalarProperty Name="GrnDetailId" ColumnName="GrnDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateOfEntry" ColumnName="DateOfEntry" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+                <ScalarProperty Name="VechileNumber" ColumnName="VechileNumber" />
+                <ScalarProperty Name="GateEntryDate" ColumnName="GateEntryDate" />
+                <ScalarProperty Name="GateEntryNo" ColumnName="GateEntryNo" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.InvoiceDetail">
+              <MappingFragment StoreEntitySet="InvoiceDetail">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="InvoiceDetailId" ColumnName="InvoiceDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueMaterials">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.IssueMaterial">
+              <MappingFragment StoreEntitySet="IssueMaterial">
+                <ScalarProperty Name="ReturnRemarks" ColumnName="ReturnRemarks" />
+                <ScalarProperty Name="IssueRemarks" ColumnName="IssueRemarks" />
+                <ScalarProperty Name="ReturnReceivedBy" ColumnName="ReturnReceivedBy" />
+                <ScalarProperty Name="IssueReceivedBy" ColumnName="IssueReceivedBy" />
+                <ScalarProperty Name="ReturnDatetimer" ColumnName="ReturnDatetimer" />
+                <ScalarProperty Name="ReturnBy" ColumnName="ReturnBy" />
+                <ScalarProperty Name="IssueDateTime" ColumnName="IssueDateTime" />
+                <ScalarProperty Name="BillOfMaterialId" ColumnName="BillOfMaterialId" />
+                <ScalarProperty Name="Issuedby" ColumnName="Issuedby" />
+                <ScalarProperty Name="Issuedcode" ColumnName="Issuedcode" />
+                <ScalarProperty Name="IssueProductMaterilId" ColumnName="IssueProductMaterilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueProductMaterialDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.IssueProductMaterialDetail">
+              <MappingFragment StoreEntitySet="IssueProductMaterialDetail">
+                <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+                <ScalarProperty Name="IssuedQty" ColumnName="IssuedQty" />
+                <ScalarProperty Name="OrderedQty" ColumnName="OrderedQty" />
+                <ScalarProperty Name="ProductMaterialId" ColumnName="ProductMaterialId" />
+                <ScalarProperty Name="IssueProductMaterialId" ColumnName="IssueProductMaterialId" />
+                <ScalarProperty Name="IssueProductMaterialDetailId" ColumnName="IssueProductMaterialDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobOrders">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.JobOrder">
+              <MappingFragment StoreEntitySet="JobOrder">
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="JobOrderDate" ColumnName="JobOrderDate" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="JobOrderNumber" ColumnName="JobOrderNumber" />
+                <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobOrderDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.JobOrderDetail">
+              <MappingFragment StoreEntitySet="JobOrderDetail">
+                <ScalarProperty Name="PrnId" ColumnName="PrnId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+                <ScalarProperty Name="JobOrderId" ColumnName="JobOrderId" />
+                <ScalarProperty Name="JobOrderDetailId" ColumnName="JobOrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organisations">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Organisation">
+              <MappingFragment StoreEntitySet="Organisation">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNO" ColumnName="PhoneNO" />
+                <ScalarProperty Name="OrganisationName" ColumnName="OrganisationName" />
+                <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRNDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.PRNDetail">
+              <MappingFragment StoreEntitySet="PRNDetail">
+                <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+                <ScalarProperty Name="PurchaseQuantity" ColumnName="PurchaseQuantity" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+                <ScalarProperty Name="PurchaseRequisitionNoteId" ColumnName="PurchaseRequisitionNoteId" />
+                <ScalarProperty Name="PRNDetailId" ColumnName="PRNDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ExerciseDuty" ColumnName="ExerciseDuty" />
+                <ScalarProperty Name="IsVat" ColumnName="IsVat" />
+                <ScalarProperty Name="PerCartoonRate" ColumnName="PerCartoonRate" />
+                <ScalarProperty Name="PacketPerCartoon" ColumnName="PacketPerCartoon" />
+                <ScalarProperty Name="UnitOfMeasureId" ColumnName="UnitOfMeasureId" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="SKUCode" ColumnName="SKUCode" />
+                <ScalarProperty Name="FlavourId" ColumnName="FlavourId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductionMaterials">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductionMaterial">
+              <MappingFragment StoreEntitySet="ProductionMaterial">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductionMaterialLedgers">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductionMaterialLedger">
+              <MappingFragment StoreEntitySet="ProductionMaterialLedger">
+                <ScalarProperty Name="BalancedAmount" ColumnName="BalancedAmount" />
+                <ScalarProperty Name="DispatchAmout" ColumnName="DispatchAmout" />
+                <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+                <ScalarProperty Name="ProductionMaterialLedgerId" ColumnName="ProductionMaterialLedgerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductLedgers">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductLedger">
+              <MappingFragment StoreEntitySet="ProductLedger">
+                <ScalarProperty Name="BalancedAmount" ColumnName="BalancedAmount" />
+                <ScalarProperty Name="DispatchAmount" ColumnName="DispatchAmount" />
+                <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="ProductLedgerId" ColumnName="ProductLedgerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductNormTemplates">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductNormTemplate">
+              <MappingFragment StoreEntitySet="ProductNormTemplate">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="WasteQuantity" ColumnName="WasteQuantity" />
+                <ScalarProperty Name="OutputQuantity" ColumnName="OutputQuantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductNormTemplateId" ColumnName="ProductNormTemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductNormTemplateDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductNormTemplateDetail">
+              <MappingFragment StoreEntitySet="ProductNormTemplateDetail">
+                <ScalarProperty Name="CartoonQuantity" ColumnName="CartoonQuantity" />
+                <ScalarProperty Name="BatchQuantity" ColumnName="BatchQuantity" />
+                <ScalarProperty Name="ProductionMaterialId" ColumnName="ProductionMaterialId" />
+                <ScalarProperty Name="SubProductId" ColumnName="SubProductId" />
+                <ScalarProperty Name="ProductNormTemplateId" ColumnName="ProductNormTemplateId" />
+                <ScalarProperty Name="ProductNormTemplateDetailId" ColumnName="ProductNormTemplateDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductStocks">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.ProductStock">
+              <MappingFragment StoreEntitySet="ProductStock">
+                <ScalarProperty Name="InOutMode" ColumnName="InOutMode" />
+                <ScalarProperty Name="CurrentStock" ColumnName="CurrentStock" />
+                <ScalarProperty Name="OpeningStock" ColumnName="OpeningStock" />
+                <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+                <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductStockId" ColumnName="ProductStockId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseRequisitionNotes">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.PurchaseRequisitionNote">
+              <MappingFragment StoreEntitySet="PurchaseRequisitionNote">
+                <ScalarProperty Name="DateOfApproved" ColumnName="DateOfApproved" />
+                <ScalarProperty Name="ApproverId" ColumnName="ApproverId" />
+                <ScalarProperty Name="IsApprovedByGM" ColumnName="IsApprovedByGM" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="NepPRNDate" ColumnName="NepPRNDate" />
+                <ScalarProperty Name="EngPRNDate" ColumnName="EngPRNDate" />
+                <ScalarProperty Name="PrnNumber" ColumnName="PrnNumber" />
+                <ScalarProperty Name="PurchaseRequisitionNoteId" ColumnName="PurchaseRequisitionNoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SerialNumbers">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.SerialNumber">
+              <MappingFragment StoreEntitySet="SerialNumber">
+                <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+                <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+                <ScalarProperty Name="CurrentNumber" ColumnName="CurrentNumber" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="IncrementUnit" ColumnName="IncrementUnit" />
+                <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategories">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.SubCategory">
+              <MappingFragment StoreEntitySet="SubCategory">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubProducts">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.SubProduct">
+              <MappingFragment StoreEntitySet="SubProduct">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="SubProductName" ColumnName="SubProductName" />
+                <ScalarProperty Name="SubProductId" ColumnName="SubProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitOfMeasurements">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.UnitOfMeasurement">
+              <MappingFragment StoreEntitySet="UnitOfMeasurement">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="UnitOfMeasurementId" ColumnName="UnitOfMeasurementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetail">
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ProfileDesc" ColumnName="ProfileDesc" />
+                <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfileDetails">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.UserProfileDetail">
+              <MappingFragment StoreEntitySet="UserProfileDetail">
+                <ScalarProperty Name="ViewStatus" ColumnName="ViewStatus" />
+                <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+                <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+                <ScalarProperty Name="EditStatus" ColumnName="EditStatus" />
+                <ScalarProperty Name="CreateStatus" ColumnName="CreateStatus" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+                <ScalarProperty Name="ProfileDetailId" ColumnName="ProfileDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WareHouses">
+            <EntityTypeMapping TypeName="HNSSInventoryModel.WareHouse">
+              <MappingFragment StoreEntitySet="WareHouse">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="WareHouseType" ColumnName="WareHouseType" />
+                <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+                <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,17 @@
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.csprojResolveAssemblyReference.cache
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.FrmProfileEntry.resources
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.Properties.Resources.resources
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.csproj.GenerateResource.Cache
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\SarropsUserManagement.exe.config
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\SarropsUserManagement.exe
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\SarropsUserManagement.pdb
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\MODEL.dll
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\SERVICE.dll
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\DAL.dll
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\EntityFramework.dll
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\MODEL.pdb
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\SERVICE.pdb
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\DAL.pdb
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\bin\Debug\EntityFramework.xml
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.exe
+D:\My Working Folder\project\HssnInventory\SarropsUserManagement\obj\Debug\SarropsUserManagement.pdb

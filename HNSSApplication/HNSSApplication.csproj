@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF998943-BC42-4C8B-8B19-208482F7FB10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HNSSApplication</RootNamespace>
+    <AssemblyName>HNSSApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="NepaliCalendar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NepaliCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsCommon.cs" />
+    <Compile Include="DataSet\HssnDataSet.cs">
+      <DependentUpon>HssnDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet\HssnDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HssnDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBillOfMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBillOfMaterial.Designer.cs">
+      <DependentUpon>FrmBillOfMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFinanceDispatchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinanceDispatchOrder.Designer.cs">
+      <DependentUpon>FrmFinanceDispatchOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvoice.Designer.cs">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIssueMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIssueMaterial.Designer.cs">
+      <DependentUpon>FrmIssueMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobOrder.Designer.cs">
+      <DependentUpon>FrmJobOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobOrderVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobOrderVerification.Designer.cs">
+      <DependentUpon>FrmJobOrderVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManagerVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManagerVerification.Designer.cs">
+      <DependentUpon>FrmManagerVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOpeningStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpeningStock.Designer.cs">
+      <DependentUpon>FrmOpeningStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPRNVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPRNVerification.Designer.cs">
+      <DependentUpon>FrmPRNVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduct.Designer.cs">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductEntry.Designer.cs">
+      <DependentUpon>FrmProductEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionMaterialEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductionMaterialEntry.designer.cs">
+      <DependentUpon>FrmProductionMaterialEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductionMaterial.designer.cs">
+      <DependentUpon>FrmProductionMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDealerEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDealerEntry.designer.cs">
+      <DependentUpon>FrmDealerEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDealer.designer.cs">
+      <DependentUpon>FrmDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceivedGoodsNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceivedGoodsNote.Designer.cs">
+      <DependentUpon>FrmReceivedGoodsNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWareHouseEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWareHouseEntry.designer.cs">
+      <DependentUpon>FrmWareHouseEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWareHouse.designer.cs">
+      <DependentUpon>FrmWareHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnitEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnitEntry.designer.cs">
+      <DependentUpon>FrmUnitEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnit.designer.cs">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFlavourEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFlavourEntry.designer.cs">
+      <DependentUpon>FrmFlavourEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFlavour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFlavour.designer.cs">
+      <DependentUpon>FrmFlavour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBrand.designer.cs">
+      <DependentUpon>FrmBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBrandEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBrandEntry.designer.cs">
+      <DependentUpon>FrmBrandEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatchOrder.Designer.cs">
+      <DependentUpon>FrmDispatchOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseRequisitionNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseRequisitionNote.Designer.cs">
+      <DependentUpon>FrmPurchaseRequisitionNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginContext.cs" />
+    <Compile Include="MdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdiMain.Designer.cs">
+      <DependentUpon>MdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\rptDispatchOrderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDispatchOrderSummary.Designer.cs">
+      <DependentUpon>rptDispatchOrderSummary.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bin\Debug\Rdlc\DispatchOrderDetailByDispatchOrderId.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Rdlc\DispatchOrderSummary.rdlc" />
+    <EmbeddedResource Include="FrmBillOfMaterial.resx">
+      <DependentUpon>FrmBillOfMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFinanceDispatchOrder.resx">
+      <DependentUpon>FrmFinanceDispatchOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvoice.resx">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIssueMaterial.resx">
+      <DependentUpon>FrmIssueMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobOrder.resx">
+      <DependentUpon>FrmJobOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobOrderVerification.resx">
+      <DependentUpon>FrmJobOrderVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManagerVerification.resx">
+      <DependentUpon>FrmManagerVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpeningStock.resx">
+      <DependentUpon>FrmOpeningStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPRNVerification.resx">
+      <DependentUpon>FrmPRNVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduct.resx">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductEntry.resx">
+      <DependentUpon>FrmProductEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductionMaterialEntry.resx">
+      <DependentUpon>FrmProductionMaterialEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductionMaterial.resx">
+      <DependentUpon>FrmProductionMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDealerEntry.resx">
+      <DependentUpon>FrmDealerEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDealer.resx">
+      <DependentUpon>FrmDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReceivedGoodsNote.resx">
+      <DependentUpon>FrmReceivedGoodsNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWareHouseEntry.resx">
+      <DependentUpon>FrmWareHouseEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWareHouse.resx">
+      <DependentUpon>FrmWareHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnitEntry.resx">
+      <DependentUpon>FrmUnitEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnit.resx">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFlavourEntry.resx">
+      <DependentUpon>FrmFlavourEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFlavour.resx">
+      <DependentUpon>FrmFlavour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBrand.resx">
+      <DependentUpon>FrmBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBrandEntry.resx">
+      <DependentUpon>FrmBrandEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatchOrder.resx">
+      <DependentUpon>FrmDispatchOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseRequisitionNote.resx">
+      <DependentUpon>FrmPurchaseRequisitionNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiMain.resx">
+      <DependentUpon>MdiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reports\rptDispatchOrderSummary.resx">
+      <DependentUpon>rptDispatchOrderSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\HNSSApplication.exe.config" />
+    <None Include="bin\Debug\HNSSApplication.vshost.exe.config" />
+    <None Include="DataSet\HssnDataSet.xsc">
+      <DependentUpon>HssnDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\HssnDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HssnDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\HssnDataSet.xss">
+      <DependentUpon>HssnDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\HNSSApplication.exe" />
+    <Content Include="bin\Debug\HNSSApplication.pdb" />
+    <Content Include="bin\Debug\HNSSApplication.vshost.exe" />
+    <Content Include="bin\Debug\HSSN.DAL.dll" />
+    <Content Include="bin\Debug\HSSN.DAL.pdb" />
+    <Content Include="bin\Debug\HSSN.Model.dll" />
+    <Content Include="bin\Debug\HSSN.Model.pdb" />
+    <Content Include="bin\Debug\HSSN.Service.dll" />
+    <Content Include="bin\Debug\HSSN.Service.pdb" />
+    <Content Include="bin\Debug\logo.bmp" />
+    <Content Include="bin\Debug\NepaliCalendar.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{86883f56-4c45-43a7-bbcf-696e900407dc}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SarropsUserManagement\SarropsUserManagement.csproj">
+      <Project>{62901814-a59f-4fae-8936-4ec392a48046}</Project>
+      <Name>SarropsUserManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SERVICE\SERVICE.csproj">
+      <Project>{dd3d960e-c584-4195-9a4c-b443f35db9f4}</Project>
+      <Name>SERVICE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MODEL;
+
+namespace SERVICE.IService
+{
+    public interface IJobOrderService
+    {
+        int saveJobOrder(JobOrderModel model);
+        int editJobOrder(JobOrderModel model);
+        bool DeleteDetail(int JoborderID);
+        bool savejoborderdetail(List<JobOrderDetailModel> modellist, int joborderid);
+        JobOrderModel GetAllDataById(int JobOrderNo);
+        List<JobOrderDetailModel> GetJobOrderDetailsbyId(int jobOrderId);
+        List<JobOrderModel> GetAllData();
+
+    }
+}

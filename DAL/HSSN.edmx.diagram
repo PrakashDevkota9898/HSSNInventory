@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52039d2592e74b0ea9fc5a7b19e5d4f3" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="HNSSInventoryModel.BillOfMaterial" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.BillOfMaterialDetail" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Brand" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Dealer" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.DispatchOrder" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.DispatchOrderDetail" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.FinanceDispatch" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.FinanceDispatchDetail" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Flavour" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.FormModule" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.GoodReceivedNote" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.GrnDetail" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Invoice" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.InvoiceDetail" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.IssueMaterial" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.IssueProductMaterialDetail" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.JobOrder" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.JobOrderDetail" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Organisation" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.PRNDetail" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Product" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductionMaterial" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductionMaterialLedger" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductLedger" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductNormTemplate" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductNormTemplateDetail" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.ProductStock" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.PurchaseRequisitionNote" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.Region" Width="1.5" PointX="14.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.SerialNumber" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.SubCategory" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.SubProduct" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.UnitOfMeasurement" Width="1.5" PointX="8.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.UserDetail" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.UserProfile" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.UserProfileDetail" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HNSSInventoryModel.WareHouse" Width="1.5" PointX="16.75" PointY="8.75" />
+        <AssociationConnector Association="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductionMaterial" />
+        <AssociationConnector Association="HNSSInventoryModel.FK_ProductNormTemplateDetail_ProductNormTemplate" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
